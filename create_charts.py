@@ -4,26 +4,27 @@ import datetime
 
 now = datetime.datetime.now()
 
-final_data = pd.read_csv("/home/james/plant-sensor/logging.csv")
+def create():
+    final_data = pd.read_csv("/home/james/plant-sensor/logging.csv")
 
-final_data = final_data.groupby(["date"], as_index=False)   
+    final_data = final_data.groupby(["date"], as_index=False)   
 
-final_data = final_data.tail(30)
+    final_data = final_data.tail(30)
 
-plt.figure()
+    plt.figure()
 
-plt.title("Plant status (daily, last 30 days) accurate as of {}".format(now.strftime("%d %B, %Y (%H:%M:%S)"))
+    plt.title("Plant status (daily, last 30 days) accurate as of {}".format(now.strftime("%d %B, %Y (%H:%M:%S)"))
 
-plt.xlabel("Time")
+    plt.xlabel("Time")
 
-plt.ylabel("Moisture level")
+    plt.ylabel("Moisture level")
 
-ax = plt.gca()
+    ax = plt.gca()
 
-final_data.plot(kind="line", x="date", y="m1", color="green", ax=ax)
+    final_data.plot(kind="line", x="date", y="m1", color="green", ax=ax)
 
-final_data.plot(kind="line", x="date", y="m2", color="orange", ax=ax)
+    final_data.plot(kind="line", x="date", y="m2", color="orange", ax=ax)
 
-final_data.plot(kind="line", x="date", y="m3", color="blue", ax=ax)
+    final_data.plot(kind="line", x="date", y="m3", color="blue", ax=ax)
 
-plt.savefig("plant_data.png")
+    plt.savefig("plant_data.png")
