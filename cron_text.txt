@@ -1,0 +1,1 @@
+0 * * * * python3 /home/james/plant-sensor/monitor_plants.py >> /home/james/log.log 2>&1
