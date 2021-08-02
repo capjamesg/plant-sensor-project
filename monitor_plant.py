@@ -1,6 +1,7 @@
 import create_charts
 from grow.moisture import Moisture
 import datetime
+import csv
 
 m1 = 0
 m2 = 0
@@ -26,6 +27,7 @@ print(m1, m2, m3)
 now = datetime.datetime.now()
     
 with open("/home/james/plant-sensor/logging.csv", "a", newline="") as file:
+    writer = csv.writer(file)
     row = [
        now.strftime("%Y-%m-%d"),
        now.strftime("%H:%M"),

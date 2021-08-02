@@ -7,13 +7,13 @@ now = datetime.datetime.now()
 def create():
     final_data = pd.read_csv("/home/james/plant-sensor/logging.csv")
 
-    final_data = final_data.groupby(["date"], as_index=False)   
+    final_data = final_data.groupby(["date"], as_index=False)
 
     final_data = final_data.tail(30)
 
     plt.figure()
 
-    plt.title("Plant status (daily, last 30 days) accurate as of {}".format(now.strftime("%d %B, %Y (%H:%M:%S)"))
+    plt.title("Plant status (daily, last 30 days) accurate as of {}".format(now.strftime("%d %B, %Y (%H:%M:%S)")))
 
     plt.xlabel("Time")
 
