@@ -25,7 +25,7 @@ print(m1, m2, m3)
 
 now = datetime.datetime.now()
     
-with open("/home/james/plant-sensor/logging.csv", "a", newline="") as file
+with open("/home/james/plant-sensor/logging.csv", "a", newline="") as file:
     row = [
        now.strftime("%Y-%m-%d"),
        now.strftime("%H:%M"),
@@ -34,6 +34,6 @@ with open("/home/james/plant-sensor/logging.csv", "a", newline="") as file
        m3
     ]
     
-     writer.writerow(row)
+    writer.writerow(row)
 
 create_charts.create()
