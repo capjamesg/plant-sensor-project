@@ -20,7 +20,10 @@ while m2 == 0:
 while m3 == 0:
     m3 = m3_interface.moisture
 
-desired_saturation = 4.0
+desired_saturation = 2.0
+
+if m1 > desired_saturation or m2 > desired_saturation or m3 > desired_saturation:
+    print("Your plant need watered")
 
 print(m1, m2, m3)
 
